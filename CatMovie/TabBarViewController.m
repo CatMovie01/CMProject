@@ -25,8 +25,9 @@
 -(void)createController
 {
     NSArray *title=@[@"电影",@"影院",@"发现",@"我的"];
-    NSArray *images=@[@"tab_my_normal",@"tab_my_normal",@"tab_my_normal",@"tab_my_normal"];
+    NSArray *images=@[@"home_footbar_icon_dianping_pressed",@"home_footbar_icon_found_pressed",@"home_footbar_icon_group_pressed",@"home_footbar_icon_my_pressed"];
     NSArray *classNames=@[@"MovieViewController",@"TheatreViewController",@"FindViewController",@"MeViewController"];
+    self.tabBar.tintColor=[UIColor orangeColor];
     
     NSMutableArray *vcArray=[[NSMutableArray alloc] init];
     for (int i=0; i<title.count; i++) {
