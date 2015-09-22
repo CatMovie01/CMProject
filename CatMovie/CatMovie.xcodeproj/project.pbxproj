@@ -270,6 +270,7 @@
 				BC6B11941BB0E7DF006D730F /* Util */,
 				BC6B118B1BB0E63C006D730F /* Resource */,
 				BC6B118A1BB0E61B006D730F /* ThirdLib */,
+				BC985B121BB0FE5D00B10B9D /* NetRequst */,
 				BC6B11601BB0E5A6006D730F /* CatMovie */,
 				BC6B117A1BB0E5A6006D730F /* CatMovieTests */,
 				BC6B115F1BB0E5A6006D730F /* Products */,
@@ -624,6 +625,13 @@
 				BC6B12651BB0F6DD006D730F /* LaunchImage-800-Portrait-736h@3x.png */,
 			);
 			name = Launch;
+			sourceTree = "<group>";
+		};
+		BC985B121BB0FE5D00B10B9D /* NetRequst */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = NetRequst;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -996,6 +1004,7 @@
 				BC6B11831BB0E5A6006D730F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BC6B11841BB0E5A6006D730F /* Build configuration list for PBXNativeTarget "CatMovieTests" */ = {
 			isa = XCConfigurationList;
@@ -1004,6 +1013,7 @@
 				BC6B11861BB0E5A6006D730F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

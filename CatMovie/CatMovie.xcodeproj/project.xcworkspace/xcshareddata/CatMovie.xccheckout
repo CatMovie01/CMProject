@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>15FF8F72-48A4-4A38-B489-1EB41F4FFCD0</string>
+	<key>IDESourceControlProjectName</key>
+	<string>CatMovie</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>00EEAFB36AEF53B32111CE5D2F83FFFF62CB904D</key>
+		<string>https://github.com/CatMovie01/CMProject.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>CatMovie/CatMovie.xcodeproj</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>00EEAFB36AEF53B32111CE5D2F83FFFF62CB904D</key>
+		<string>../../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>https://github.com/CatMovie01/CMProject.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>111</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>00EEAFB36AEF53B32111CE5D2F83FFFF62CB904D</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>00EEAFB36AEF53B32111CE5D2F83FFFF62CB904D</string>
+			<key>IDESourceControlWCCName</key>
+			<string>CMProject</string>
+		</dict>
+	</array>
+</dict>
+</plist>
