@@ -81,6 +81,7 @@
 		BC6B12671BB0F6DD006D730F /* LaunchImage-700@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC6B12631BB0F6DD006D730F /* LaunchImage-700@2x.png */; };
 		BC6B12681BB0F6DD006D730F /* LaunchImage-800-667h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC6B12641BB0F6DD006D730F /* LaunchImage-800-667h@2x.png */; };
 		BC6B12691BB0F6DD006D730F /* LaunchImage-800-Portrait-736h@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = BC6B12651BB0F6DD006D730F /* LaunchImage-800-Portrait-736h@3x.png */; };
+		BC985B181BB1050600B10B9D /* interface.rtf in Resources */ = {isa = PBXBuildFile; fileRef = BC985B171BB1050600B10B9D /* interface.rtf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -243,6 +244,7 @@
 		BC6B12631BB0F6DD006D730F /* LaunchImage-700@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-700@2x.png"; sourceTree = "<group>"; };
 		BC6B12641BB0F6DD006D730F /* LaunchImage-800-667h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-667h@2x.png"; sourceTree = "<group>"; };
 		BC6B12651BB0F6DD006D730F /* LaunchImage-800-Portrait-736h@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "LaunchImage-800-Portrait-736h@3x.png"; sourceTree = "<group>"; };
+		BC985B171BB1050600B10B9D /* interface.rtf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.rtf; path = interface.rtf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -630,6 +632,7 @@
 		BC985B121BB0FE5D00B10B9D /* NetRequst */ = {
 			isa = PBXGroup;
 			children = (
+				BC985B171BB1050600B10B9D /* interface.rtf */,
 			);
 			name = NetRequst;
 			sourceTree = "<group>";
@@ -722,6 +725,7 @@
 				BC6B12681BB0F6DD006D730F /* LaunchImage-800-667h@2x.png in Resources */,
 				BC6B116F1BB0E5A6006D730F /* Images.xcassets in Resources */,
 				BC6B12691BB0F6DD006D730F /* LaunchImage-800-Portrait-736h@3x.png in Resources */,
+				BC985B181BB1050600B10B9D /* interface.rtf in Resources */,
 				BC6B12671BB0F6DD006D730F /* LaunchImage-700@2x.png in Resources */,
 				BC6B125F1BB0F3FE006D730F /* tab_my_normal.png in Resources */,
 				BC6B12451BB0EA81006D730F /* JHRefresh.bundle in Resources */,
