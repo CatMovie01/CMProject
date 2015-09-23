@@ -24,21 +24,23 @@
 
 -(void)createController
 {
-    NSArray *title=@[@"电影",@"影院",@"发现",@"我的"];
-    NSArray *images=@[@"home_footbar_icon_dianping_pressed",@"home_footbar_icon_found_pressed",@"home_footbar_icon_group_pressed",@"home_footbar_icon_my_pressed"];
-    NSArray *classNames=@[@"MovieViewController",@"TheatreViewController",@"FindViewController",@"MeViewController"];
-    self.tabBar.tintColor=[UIColor orangeColor];
+    NSArray *title=@[@"首页",@"购票",@"商城",@"发现",@"我的"];
+    NSArray *images=@[@"home",@"payticket",@"store",@"discover",@"myinfo"];
+    NSArray* selectedIamges=@[@"home_on",@"payticket_on",@"store_on",@"discover_on",@"myinfo_on"];
+    NSArray *classNames=@[@"MovieViewController",@"TheatreViewController",@"StoreViewController",@"FindViewController",@"MeViewController"];
+    self.tabBar.tintColor=RGB(30, 144, 255);
     
     NSMutableArray *vcArray=[[NSMutableArray alloc] init];
     for (int i=0; i<title.count; i++) {
         Class clas=NSClassFromString(classNames[i]);
         BaseViewController *vc=[[[clas class] alloc] init];
-        
+         vc.title=title[i];
         UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:vc];
-        
+        [nav.navigationBar setBackgroundImage:[UIImage imageNamed:@"menu_top_bg@2x.png"] forBarMetrics:UIBarMetricsDefault];
         nav.tabBarItem.title=title[i];
         nav.tabBarItem.image=[[UIImage imageNamed:images[i]] imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
-        
+        nav.tabBarItem.selectedImage=[[UIImage imageNamed:selectedIamges[i]]imageWithRenderingMode:UIImageRenderingModeAlwaysOriginal];
+       
         [vcArray addObject:nav];
     }
     self.viewControllers=vcArray;
