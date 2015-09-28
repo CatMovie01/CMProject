@@ -8,7 +8,7 @@
 
 #import "TabBarViewController.h"
 #import "BaseViewController.h"
-
+#import "FindViewController.h"
 @interface TabBarViewController ()
 
 @end
@@ -24,6 +24,7 @@
 
 -(void)createController
 {
+    
     NSArray *title=@[@"首页",@"购票",@"商城",@"发现",@"我的"];
     NSArray *images=@[@"home",@"payticket",@"store",@"discover",@"myinfo"];
     NSArray* selectedIamges=@[@"home_on",@"payticket_on",@"store_on",@"discover_on",@"myinfo_on"];
@@ -32,8 +33,17 @@
     
     NSMutableArray *vcArray=[[NSMutableArray alloc] init];
     for (int i=0; i<title.count; i++) {
+       
         Class clas=NSClassFromString(classNames[i]);
         BaseViewController *vc=[[[clas class] alloc] init];
+        
+        if (i==3) {
+            
+            FindViewController* fvc=(FindViewController*)vc;
+            fvc.viewControllers=[FindViewController analysisPlist];
+            
+            //vc
+        }
          vc.title=title[i];
         UINavigationController *nav=[[UINavigationController alloc] initWithRootViewController:vc];
         [nav.navigationBar setBackgroundImage:[UIImage imageNamed:@"menu_top_bg@2x.png"] forBarMetrics:UIBarMetricsDefault];
