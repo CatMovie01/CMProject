@@ -40,4 +40,5 @@
 //-(void)createView;
 -(void)initData;
 -(void)initWithModels;
+- (void)CreateimageUrl:(NSString*)image Name:(NSString*)name;
 @end

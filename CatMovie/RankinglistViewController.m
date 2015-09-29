@@ -10,6 +10,7 @@
 #import "filmModel.h"
 #import "filmDetailModel.h"
 #import "FilmCell.h"
+
 @interface RankinglistViewController ()
 
 @end
@@ -74,9 +75,11 @@
     
     cell.TitleName.text=model.title;
     //去除首尾空格
-    NSLog(@"%@",model.summary);
+    //NSLog(@"%@",model.summary);
    NSString* str=[model.summary stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceCharacterSet]];
-  
+    //替换字符串
+    str = [str stringByReplacingOccurrencesOfString:@"\n" withString:@""];
+    str = [str stringByReplacingOccurrencesOfString:@"\r" withString:@""];
    
     /*NSArray* arr=[model.summary componentsSeparatedByString:@"/n"];
     NSString* str=[arr lastObject];*/

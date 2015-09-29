@@ -48,7 +48,7 @@
 ////上面的图
 #define FURL  @"http://api.m.mtime.cn/PageSubArea/GetRecommendationIndexInfo.api"
 ////下面的列表
-#define NewsURL @"http://api.m.mtime.cn/News/NewsList.api?pageIndex=1"
+#define NewsURL @"http://api.m.mtime.cn/News/NewsList.api?pageIndex=%ld"
 //
 //
 //2.预告片
