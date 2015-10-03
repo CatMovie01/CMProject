@@ -38,7 +38,9 @@
 @property(nonatomic)NSInteger reviewID;
 
 //-(void)createView;
+- (void)createRefresh;
 -(void)initData;
 -(void)initWithModels;
 - (void)CreateimageUrl:(NSString*)image Name:(NSString*)name;
+- (void)endRefresh;
 @end

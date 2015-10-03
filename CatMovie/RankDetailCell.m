@@ -1,16 +1,14 @@
 //
-//  PreCell.m
+//  RankDetailCell.m
 //  CatMovie
 //
-//  Created by qianfeng on 15/9/25.
+//  Created by qianfeng on 15/9/30.
 //  Copyright (c) 2015年 wangli. All rights reserved.
 //
 
-#import "PreCell.h"
+#import "RankDetailCell.h"
 
-@implementation PreCell{
-   
-}
+@implementation RankDetailCell
 
 - (void)awakeFromNib {
     // Initialization code

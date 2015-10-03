@@ -9,5 +9,8 @@
 #import <UIKit/UIKit.h>
 
 @interface BillboardViewController : UIViewController
+@property (nonatomic,copy) NSString *url;
 
+@property(nonatomic,strong)UITableView* tableView;
+- (void)valuation;
 @end

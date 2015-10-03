@@ -7,14 +7,14 @@
 	<key>IDESourceControlProjectIdentifier</key>
 	<string>26B93A45-AA00-4FB5-BF51-ED8B8A0A3F67</string>
 	<key>IDESourceControlProjectName</key>
-	<string>CatMovie</string>
+	<string>project</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
 		<key>00EEAFB36AEF53B32111CE5D2F83FFFF62CB904D</key>
 		<string>https://github.com/CatMovie01/CMProject.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>CatMovie/CatMovie.xcodeproj</string>
+	<string>CatMovie/CatMovie.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>00EEAFB36AEF53B32111CE5D2F83FFFF62CB904D</key>

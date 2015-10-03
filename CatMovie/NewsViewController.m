@@ -8,13 +8,14 @@
 
 #import "NewsViewController.h"
 #import "NewsModel.h"
-#import "newsList.h"
+
 #import "FourModel.h"
 #import "NewsCell.h"
 #import "SecondNewsCell.h"
 #import "HeaderNewsCell.h"
-#import "BillboardViewController.h"
+
 @interface NewsViewController ()
+@property(nonatomic,strong)NSMutableArray* dataArry;
 @property(nonatomic)NSInteger page;
 @property (nonatomic,assign) BOOL isRefresh;
 @property (nonatomic,assign) BOOL isloading;
@@ -25,84 +26,25 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-   // [super initData];
-    self.page=1;
-    [self initNetData];
-    //[self createHeaderView];
-   
+   // self.page=1;
+    //[self initNetData];
+    //[self createView];
+    //[self createRefresh];
+    
 }
 
-- (void)createRefresh
-{
-    __weak typeof(self) weakSelf = self;
-    [self.tableView addRefreshHeaderViewWithAniViewClass:[JHRefreshCommonAniView class] beginRefresh:^{
-        if (weakSelf.isRefresh) {
-            return;
-        }
-        weakSelf.isRefresh = YES;
-        weakSelf.page = 1;
-        [weakSelf getData];
-        
-    }];
-    [self.tableView addRefreshFooterViewWithAniViewClass:[JHRefreshCommonAniView class] beginRefresh:^{
-        if (weakSelf.isloading) {
-            return ;
-        }
-        weakSelf.isloading = YES;
-        weakSelf.page++;
-        [weakSelf getData];
-        
-    }];
-}
-- (void)endRefresh
-{
-    if (self.isRefresh) {
-        self.isRefresh = NO;
-        [self.tableView headerEndRefreshingWithResult:JHRefreshResultNone];
-    }
-    if (self.isloading) {
-        self.isloading = NO;
-        [self.tableView footerEndRefreshing];
-    }
-}
 -(void)createView{
-    [self createRefresh];
+   
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-64-49) style:UITableViewStyleGrouped];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     [self.view addSubview:self.tableView];
-     [self CreateimageUrl:self.imageUrl Name:self.name];
+    [self CreateimageUrl:self.imageUrl Name:self.name];
     
 }
-/*-(void)createHeaderView{
-     NSInteger f=self.newsID;
-    NSLog(@"%ld",f);
-    self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-64-49) style:UITableViewStylePlain];
-    self.tableView.delegate = self;
-    self.tableView.dataSource = self;
-    self.dataArr = [[NSMutableArray alloc] init];
-    
-    
-       UIImageView* View=[[UIImageView alloc]init];
-       NSLog(@"image=%@",self.imageUrl);
-       [View sd_setImageWithURL:[NSURL URLWithString:self.imageUrl]];
-       View.frame=CGRectMake(0, 0, 100, ScreenHeight/3);
-       //
-    UIView * view=[[UIView alloc]initWithFrame:CGRectMake(0,View.bottom-40, ScreenWidth, 40)];
-    view.backgroundColor=[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.7];
-    
-    UILabel*label=[Factory createLabelWithTitle:self.name frame:CGRectMake(0,5, ScreenWidth, 30) textColor:[UIColor whiteColor] fontSize:18.f];
-    //label
-    label.textAlignment=NSTextAlignmentCenter;
-    [view addSubview:label];
-    [View addSubview:view];
-      self.tableView.tableHeaderView=View;
-      [self.view addSubview:self.tableView];
-}*/
 
 
--(void)initNetData{
-   
+-(void)initData{
     [super initData];
     [self getData];
 }
@@ -111,11 +53,14 @@
     AFHTTPRequestOperationManager*mananger=[AFHTTPRequestOperationManager manager];
     mananger.responseSerializer=[AFHTTPResponseSerializer serializer];
     [mananger GET:url parameters:Nil success:^(AFHTTPRequestOperation *operation, id responseObject) {
-        
+       
        //newsList* model=[[newsList alloc]initWithData:responseObject error:nil];
-        //NSLog(@"%@",model);
+         //NSLog(@"%@",model);
         
         NSDictionary* dic=[NSJSONSerialization JSONObjectWithData:responseObject options:NSJSONReadingMutableContainers error:Nil];
+        if (self.page==1) {
+            [self.dataArr removeAllObjects];
+        }
          NSArray* newsList=[dic objectForKey:@"newsList"];
          for (NSDictionary* dict in newsList) {
             NewsModel* model=[[NewsModel alloc]init];
@@ -139,7 +84,8 @@
              }
              [self.dataArr addObject:model];
              [self.tableView reloadData];
-             //NSLog(@"%@",model.images);
+             [self endRefresh];
+           
         }
     } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
         
@@ -181,9 +127,7 @@
      if (indexPath.section==0) {
         return 70;
     }else{
-        
-            return 108;
-        
+        return 108;
     }
     
     
@@ -203,12 +147,13 @@
         if (cell==nil) {
              cell=[[[NSBundle mainBundle]loadNibNamed:@"HeaderNewsCell" owner:self options:nil]lastObject];
         }
+        
         return cell;
     }else{
         //self.tableView.estimatedRowHeight = 100;
         
         NewsModel* model=[self.dataArr objectAtIndex:indexPath.row];
-        if (model.images) {
+        if (model.images&&model.images.count==3) {
             NSString* CellID=@"identity";
          NewsCell* cell=[tableView dequeueReusableCellWithIdentifier:CellID];
          if (cell==nil) {
@@ -248,7 +193,6 @@
 }
 -(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
     [self.tableView deselectRowAtIndexPath:indexPath animated:YES];
-  
 }
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];

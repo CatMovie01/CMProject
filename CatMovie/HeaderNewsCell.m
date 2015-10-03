@@ -7,7 +7,8 @@
 //
 
 #import "HeaderNewsCell.h"
-#import "BillboardViewController.h"
+#import "ContainerVIewController.h"
+#import "CBilldViewController.h"
 @implementation HeaderNewsCell
 
 - (void)awakeFromNib {
@@ -21,13 +22,20 @@
 }
 
 - (IBAction)ChinaSort:(UIButton *)sender {
-}
-
-- (IBAction)globalSort:(UIButton *)sender {
-    NSLog(@"haha");
     self.NewsView = (TabBarViewController *)[[[UIApplication sharedApplication] keyWindow] rootViewController];
     UINavigationController *nav = self.NewsView.viewControllers[3];
-    BillboardViewController* bvc=[[BillboardViewController alloc]init];
+    CBilldViewController* cvc=[[CBilldViewController alloc]init];
+   
+    cvc.tableView.frame=CGRectMake(0, 0, ScreenWidth, ScreenHeight);
+     nav.navigationBarHidden=NO;
+    [nav pushViewController:cvc animated:YES];
+}
+- (IBAction)globalSort:(UIButton *)sender {
+    //NSLog(@"haha");
+    self.NewsView = (TabBarViewController *)[[[UIApplication sharedApplication] keyWindow] rootViewController];
+    UINavigationController *nav = self.NewsView.viewControllers[3];
+    ContainerVIewController* bvc=[[ContainerVIewController alloc]init];
+    bvc.viewControllers=[ContainerVIewController analysisPlist];
     nav.navigationBarHidden=NO;
     [nav pushViewController:bvc animated:YES];
 }

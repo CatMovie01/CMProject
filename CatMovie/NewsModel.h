@@ -8,7 +8,7 @@
 
 #import "BaseModel.h"
 #import "JSONModel.h"
-#import "ImagesModel.h"
+
 /*@protocol NewsModel
 
 @end*/

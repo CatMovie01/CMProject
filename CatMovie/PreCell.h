@@ -9,8 +9,10 @@
 #import <UIKit/UIKit.h>
 
 @interface PreCell : UITableViewCell
+
 @property (strong, nonatomic) IBOutlet UIImageView *image;
 @property (strong, nonatomic) IBOutlet UILabel *VideoTitle;
 @property (strong, nonatomic) IBOutlet UILabel *Summary;
+
 
 @end

@@ -21,6 +21,9 @@
     [super viewDidLoad];
      [self getInternetData];
 }
+- (void)createRefresh{
+    
+}
 //解析的数据
 -(void)getInternetData{
     AFHTTPRequestOperationManager* manager=[AFHTTPRequestOperationManager manager];

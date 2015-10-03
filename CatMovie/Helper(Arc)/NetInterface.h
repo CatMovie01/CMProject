@@ -60,7 +60,17 @@
 //排行榜
 //1.http://api.m.mtime.cn/TopList/TopListFixedNew.api
 //
-#define RankURL @"http://api.m.mtime.cn/TopList/TopListOfAll.api?pageIndex=1"
+#define RankURL @"http://api.m.mtime.cn/TopList/TopListOfAll.api?pageIndex=%ld"
+//排行榜详情
+#define RankAURL @"http://api.m.mtime.cn/TopList/TopListDetailsByRecommend.api?pageIndex=1&pageSubAreaID=2015"
+#define RankCURL @"http://api.m.mtime.cn/TopList/TopListDetailsByRecommend.api?pageIndex=1&pageSubAreaID=2020"
+#define RankXURL @"http://api.m.mtime.cn/TopList/TopListDetailsByRecommend.api?pageIndex=1&pageSubAreaID=2016"
+#define RankTURL @"http://api.m.mtime.cn/TopList/TopListDetailsByRecommend.api?pageIndex=1&pageSubAreaID=2019"
+#define RankDURL @"http://api.m.mtime.cn/TopList/TopListDetailsByRecommend.api?pageIndex=1&pageSubAreaID=2017"
+#define RankKURL @"http://api.m.mtime.cn/TopList/TopListDetailsByRecommend.api?pageIndex=1&pageSubAreaID=2018"
+
+#define RankDeURL @"http://api.m.mtime.cn/TopList/TopListDetails.api?pageIndex=1&topListId=%ld"
+#define RankDetailURL @"http://api.m.mtime.cn/TopList/TopListDetailsByRecommend.api?pageIndex=1&pageSubAreaID=%ld"
 //
 //影评
 //

@@ -1,16 +1,14 @@
 //
-//  PreCell.m
+//  RankListCell.m
 //  CatMovie
 //
-//  Created by qianfeng on 15/9/25.
+//  Created by qianfeng on 15/10/3.
 //  Copyright (c) 2015年 wangli. All rights reserved.
 //
 
-#import "PreCell.h"
+#import "RankListCell.h"
 
-@implementation PreCell{
-   
-}
+@implementation RankListCell
 
 - (void)awakeFromNib {
     // Initialization code

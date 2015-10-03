@@ -12,7 +12,9 @@
     NSString* _className;
     MyImageView* imageView;
 }
-
+@property(nonatomic)NSInteger page;
+@property (nonatomic,assign) BOOL isRefresh;
+@property (nonatomic,assign) BOOL isloading;
 @end
 
 @implementation FindBaseViewController
@@ -29,18 +31,25 @@
 }
 - (void)viewDidLoad {
     [super viewDidLoad];
+     self.page=1;
     [self initData];
     self.dataArr=[[NSMutableArray alloc]init];
-    //[self createHeaderView];
+    [self createTableView];
+   // [self createHeaderView];
+    [self createRefresh];
 }
--(void)createHeaderView{
+- (void)ImagePushViewController:(MyImageView *)imageView{
+    
+}
+-(void)createTableView{
     self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 0, ScreenWidth, ScreenHeight-64-49) style:UITableViewStylePlain];
     self.tableView.delegate = self;
     self.tableView.dataSource = self;
     self.dataArr = [[NSMutableArray alloc] init];
     
-    
-    imageView=[[MyImageView alloc]init];
+}
+-(void)createHeaderView{
+   imageView=[[MyImageView alloc]init];
     if ([_className isEqualToString:@"NewsViewController"]) {
         [self CreateimageUrl:self.imageUrl Name:self.name];
     }else if ([_className isEqualToString:@"PrevueViewController"]){
@@ -52,8 +61,6 @@
        
         [self CreateimageUrl:self.imageUrl2 Name:self.name2];
         
-        
-        
     }else{
        [self CreateimageUrl:self.imageUrl3 Name:self.name3];
     }
@@ -63,23 +70,47 @@
     
    
 }
+
+//刷新
+- (void)createRefresh
+{
+    __weak typeof(self) weakSelf = self;
+    [self.tableView addRefreshHeaderViewWithAniViewClass:[JHRefreshCommonAniView class] beginRefresh:^{
+        if (weakSelf.isRefresh) {
+            return;
+        }
+        weakSelf.isRefresh = YES;
+        weakSelf.page = 1;
+        [weakSelf initData];
+        
+    }];
+    
+    [self.tableView addRefreshFooterViewWithAniViewClass:[JHRefreshCommonAniView class] beginRefresh:^{
+        if (weakSelf.isloading) {
+            return ;
+        }
+        weakSelf.isloading = YES;
+        weakSelf.page++;
+        [weakSelf initData];
+        
+    }];
+}
+
+- (void)endRefresh
+{
+    if (self.isRefresh) {
+        self.isRefresh = NO;
+        [self.tableView headerEndRefreshingWithResult:JHRefreshResultNone];
+    }
+    if (self.isloading) {
+        self.isloading = NO;
+        [self.tableView footerEndRefreshing];
+    }
+}
+
 - (void)CreateimageUrl:(NSString*)image Name:(NSString*)name{
     imageView.userInteractionEnabled=YES;
-//    if ([name isEqualToString:self.name2]) {
-//        imageView.frame=CGRectMake(0, 0, 100, ScreenHeight/2);
-//        //imageView.frame=CGRectMake(0, 0, 100, ScreenHeight/3);
-//        
-//        UIView*  view=[[UIView alloc]initWithFrame:CGRectMake(0,imageView.bottom-40-ScreenHeight/6, ScreenWidth, 40)];
-//        view.backgroundColor=[UIColor colorWithRed:0.3 green:0.3 blue:0.3 alpha:0.7];
-//        
-//        UILabel* label=[Factory createLabelWithTitle:name frame:CGRectMake(0,5, ScreenWidth, 30) textColor:[UIColor whiteColor] fontSize:18.f];
-//        //label
-//        label.textAlignment=NSTextAlignmentCenter;
-//        [view addSubview:label];
-//        [imageView addSubview:view];
-//        
-//        [imageView sd_setImageWithURL:[NSURL URLWithString:image]];
-//    }
+
     imageView.frame=CGRectMake(0, 0, 100, ScreenHeight/3);
     
     UIView*  view=[[UIView alloc]initWithFrame:CGRectMake(0,imageView.bottom-40, ScreenWidth, 40)];
@@ -93,9 +124,7 @@
     
     [imageView sd_setImageWithURL:[NSURL URLWithString:image]];
 }
-/*-(void)createView{
-   
-}*/
+
 -(void)initData{
      _className = NSStringFromClass([self class]);
     
