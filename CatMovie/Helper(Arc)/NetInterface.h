@@ -10,9 +10,6 @@
 #define CatMovie_NetInterface_h
 ///时光网
 
-
-
-
 //首页
 //上面的横向滑动
 //1.http://api.m.mtime.cn/PageSubArea/HotPlayMovies.api?locationId=290
@@ -46,27 +43,27 @@
 //(发现类似新闻页面)
 //1.新闻
 ////上面的图
-#define FURL  @"http://api.m.mtime.cn/PageSubArea/GetRecommendationIndexInfo.api"
+//1.http://api.m.mtime.cn/PageSubArea/GetRecommendationIndexInfo.api
 ////下面的列表
-#define NewsURL @"http://api.m.mtime.cn/News/NewsList.api?pageIndex=%ld"
+//2.http://api.m.mtime.cn/News/NewsList.api?pageIndex=1
 //
 //
 //2.预告片
 //1. http://api.m.mtime.cn/PageSubArea/GetRecommendationIndexInfo.api
 //
-#define PreURL @"http://api.m.mtime.cn/PageSubArea/TrailerList.api"
+//2.http://api.m.mtime.cn/PageSubArea/TrailerList.api
 //
 //
 //排行榜
 //1.http://api.m.mtime.cn/TopList/TopListFixedNew.api
 //
-#define RankURL @"http://api.m.mtime.cn/TopList/TopListOfAll.api?pageIndex=1"
+//2. http://api.m.mtime.cn/TopList/TopListOfAll.api?pageIndex=1
 //
 //影评
 //
-#define FilmURL @"http://api.m.mtime.cn/MobileMovie/Review.api?needTop=false"
-#define KNews   @"news"
-#define KPrevue @"KPrevue"
-#define KFilm   @"KFilm"
-#define KRanking @"Ranking"
+//1.http://api.m.mtime.cn/MobileMovie/Review.api?needTop=false
+
+
+
+
 #endif

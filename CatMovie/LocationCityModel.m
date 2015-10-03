@@ -1,13 +1,13 @@
 //
-//  BaseModel.h
+//  LocationCityModel.m
 //  CatMovie
 //
 //  Created by qianfeng on 15/9/29.
 //  Copyright (c) 2015年 wangli. All rights reserved.
 //
 
-#import <Foundation/Foundation.h>
+#import "LocationCityModel.h"
 
-@interface BaseModel : NSObject
+@implementation LocationCityModel
 
 @end

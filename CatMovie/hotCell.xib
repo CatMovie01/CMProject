@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="7706" systemVersion="14C109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="leftCell" rowHeight="98" id="KGk-i7-Jjw" customClass="hotCell">
+            <rect key="frame" x="0.0" y="0.0" width="356" height="98"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="43"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mJD-V5-sfK">
+                        <rect key="frame" x="0.0" y="5" width="65" height="87"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="65" id="S8m-7J-2bB"/>
+                        </constraints>
+                    </imageView>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JVb-ZA-zHt">
+                        <rect key="frame" x="73" y="13" width="223" height="18"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="18" id="2Oy-3z-gTQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="11" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FSA-A1-SPu">
+                        <rect key="frame" x="73" y="41" width="233" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="wdJ-95-r2q"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                    </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hOS-vA-M27">
+                        <rect key="frame" x="73" y="62" width="233" height="13"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="13" id="7XB-zo-rrV"/>
+                            <constraint firstAttribute="height" constant="13" id="Ttv-w4-rO2"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Ttv-w4-rO2"/>
+                            </mask>
+                        </variation>
+                    </label>
+                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pwN-P8-0hP">
+                        <rect key="frame" x="288" y="58" width="48" height="22"/>
+                        <color key="backgroundColor" red="1" green="0.57899680279999999" blue="0.096133565579999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                        <color key="tintColor" red="1" green="0.57899680279999999" blue="0.096133565579999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <state key="normal" title="购票">
+                            <color key="titleColor" red="0.99599840660000005" green="1" blue="0.95218938909999995" alpha="1" colorSpace="calibratedRGB"/>
+                            <color key="titleShadowColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        </state>
+                        <connections>
+                            <action selector="hotClick:" destination="KGk-i7-Jjw" eventType="touchUpInside" id="OHI-kp-6sW"/>
+                        </connections>
+                    </button>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="JVb-ZA-zHt" secondAttribute="trailing" constant="60" id="5tt-V5-zh6"/>
+                    <constraint firstAttribute="bottom" secondItem="mJD-V5-sfK" secondAttribute="bottom" constant="5" id="BP0-Kv-AvZ"/>
+                    <constraint firstItem="JVb-ZA-zHt" firstAttribute="leading" secondItem="mJD-V5-sfK" secondAttribute="trailing" constant="8" id="GBn-bY-9ch"/>
+                    <constraint firstAttribute="trailing" secondItem="hOS-vA-M27" secondAttribute="trailing" constant="50" id="PvQ-1f-Lon"/>
+                    <constraint firstItem="mJD-V5-sfK" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="5" id="Qc3-GP-f1W"/>
+                    <constraint firstAttribute="trailing" secondItem="FSA-A1-SPu" secondAttribute="trailing" constant="50" id="TGx-Ng-Qa1"/>
+                    <constraint firstItem="FSA-A1-SPu" firstAttribute="leading" secondItem="mJD-V5-sfK" secondAttribute="trailing" constant="8" id="WaR-AU-ZxK"/>
+                    <constraint firstItem="hOS-vA-M27" firstAttribute="top" secondItem="FSA-A1-SPu" secondAttribute="bottom" constant="8" id="ZLH-Hu-x9d"/>
+                    <constraint firstItem="JVb-ZA-zHt" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="13" id="fKy-eP-EI8"/>
+                    <constraint firstItem="mJD-V5-sfK" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="hs0-aa-mGq"/>
+                    <constraint firstItem="FSA-A1-SPu" firstAttribute="top" secondItem="JVb-ZA-zHt" secondAttribute="bottom" constant="10" id="i1h-aX-b0v"/>
+                    <constraint firstItem="hOS-vA-M27" firstAttribute="leading" secondItem="mJD-V5-sfK" secondAttribute="trailing" constant="8" id="xFi-8X-P4i"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="hotImageView" destination="mJD-V5-sfK" id="lZk-ZO-Uh9"/>
+                <outlet property="hotRemark" destination="FSA-A1-SPu" id="DQd-hg-XlB"/>
+                <outlet property="hotShowInfo" destination="hOS-vA-M27" id="zCV-Sh-WAj"/>
+                <outlet property="hotTitle" destination="JVb-ZA-zHt" id="1pt-q4-9c4"/>
+            </connections>
+            <point key="canvasLocation" x="437" y="282"/>
+        </tableViewCell>
+    </objects>
+</document>
